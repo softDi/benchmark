@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/cyliu/workspace/benchmark/mpi/ppmpi_c/chap12/ping_pong.c
+stdio.h
+-
+mpi.h
+/home/cyliu/workspace/benchmark/mpi/ppmpi_c/chap12/mpi.h
+
+/opt/mpich/include/mpi.h
+stddef.h
+-
+cstdint
+-
+stdint.h
+-
+mpio.h
+/opt/mpich/include/mpio.h
+mpicxx.h
+/opt/mpich/include/mpicxx.h
+
+/opt/mpich/include/mpicxx.h
+stdio.h
+-
+
+/opt/mpich/include/mpio.h
+mpi.h
+/opt/mpich/include/mpi.h
+

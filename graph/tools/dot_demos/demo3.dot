@@ -1,0 +1,6 @@
+//demo3
+digraph {
+    "james" -> "amy";
+    "amy" -> "kevin";
+    "kevin" -> "jack";
+}

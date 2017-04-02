@@ -1,0 +1,1 @@
+/usr/bin/gcc-5.3   -lm    CMakeFiles/Exercise.dir/ping_pong.c.o  -o Exercise -rdynamic /opt/mpich/lib/libmpi.so -Wl,-rpath,/opt/mpich/lib 
