@@ -9,6 +9,8 @@ export HADOOP_HOME=/opt/hadoop
 export PATH=$HADOOP_HOME/bin:$PATH
 export HADOOP_CONF_DIR=/tmp/hadoop/configs
 export HADOOP_LOG_DIR=/tmp/hadoop/logs
+export YARN_LOG_DIR=/tmp/hadoop/yarn-logs
+
 
 
 
