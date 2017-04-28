@@ -12,7 +12,6 @@ else
     python trainer.py \
     --ps_hosts=hpc0:2222 \
     --worker_hosts=hpc1:2222,hpc2:2222,hpc3:2222 \
-    --job_name=worker --task_index=$(sed 's/hpc//g')
-    
+    --job_name=worker --task_index=$( hostname | sed 's/hpc//g')
 fi 
 
