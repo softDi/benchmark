@@ -20,7 +20,7 @@ import sys
 import time
 
 # cluster specification
-parameter_servers = ["192.168.1.10:2222"]
+parameter_servers = ["paslab-cyliu:2222"]
 #workers = ["hpc1:2222", "hpc2:2222", "hpc3:2222"]
 workers = ["192.168.1.11:2222"]
 cluster = tf.train.ClusterSpec({"ps": parameter_servers, "worker": workers})
