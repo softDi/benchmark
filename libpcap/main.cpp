@@ -16,10 +16,25 @@ int main(int argc, char *argv[])
     /*
     * Step 2 - Get a file name
     */
+    FILE* pFile;
+    if(argc<2){
+        printf("Usage: ./pcapread filename\n");
+        return -1;
+    }
+
+    if(pFile=fopen(argv[1],"r")){
+        fclose(pFile);
+    }
+    else{
+        perror ("The following error occurred\n");
+        return -1;
+    }
+
+
+    string file = string(argv[1]);
  
-    string file = "test.pcap";
- 
-    /*
+
+        /*
     * Step 3 - Create an char array to hold the error.
     */
  

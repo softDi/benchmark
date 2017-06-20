@@ -24,6 +24,7 @@ $(LIB_USER):	$(LIB_USER_OBJS)
 clean:
 	@rm $(TARGET) $(LIB_USER) *.o
 	@echo -e "\033[0;34m Removed all TARGET and objects\033[0m"
+.PHONY: run	
 
 
 C_NONE=$(shell echo -e "\033[0m")
