@@ -1,4 +1,4 @@
-export MPI_HOME=/opt/mvapich
+export MPI_HOME=/opt/mpich
 export PATH=/opt/intel/bin:$PATH
 export PATH=$MPI_HOME/bin:$PATH
 export JAVA_HOME=/opt/jdk
