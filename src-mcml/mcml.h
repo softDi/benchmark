@@ -73,7 +73,7 @@
 #define PI 3.1415926
 #define WEIGHT 1E-4		/* Critical weight for roulette. */
 #define CHANCE 0.1		/* Chance of roulette survival. */
-#define STRLEN 256		/* String length. */
+#define STRLEN 1024		/* String length. */
 
 #define Boolean char
 
