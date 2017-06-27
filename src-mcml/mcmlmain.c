@@ -189,7 +189,7 @@ char main(int argc, char *argv[])
   short num_runs;	/* number of independent runs. */
   InputStruct in_parm;
 
-  ShowVersion("Version 1.2, 1993");
+  //ShowVersion("Version 1.2, 1993");
   GetFnameFromArgv(argc, argv, input_filename);
   input_file_ptr = GetFile(input_filename);
   CheckParm(input_file_ptr, &in_parm);	

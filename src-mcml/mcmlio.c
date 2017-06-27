@@ -188,7 +188,8 @@ Boolean CommentLine(char *Buf)
  ****/
 char * FindDataLine(FILE *File_Ptr)
 {
-  char buf[STRLEN];
+  char *buf;
+  buf = (char*) malloc(STRLEN);
   
   buf[0] = '\0';
   do {	/* skip space or comment lines. */
@@ -200,8 +201,7 @@ char * FindDataLine(FILE *File_Ptr)
     else
       CheckChar(buf);
   } while(CommentLine(buf));
-  
-  return(buf);
+  return buf;
 }
 
 /***********************************************************
