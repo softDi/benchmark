@@ -9,19 +9,36 @@ int main(int argc, char* argv[]){
     }
     uint32_t width = atoi(argv[1]);
 
-    double *A = (double*) malloc(width*width*sizeof(double));
-    double *B = (double*) malloc(width*width*sizeof(double));
-    double *C = (double*) malloc(width*width*sizeof(double));
+    double *a = (double*) malloc(width*width*sizeof(double));
+    double *b = (double*) malloc(width*width*sizeof(double));
+    double *c = (double*) malloc(width*width*sizeof(double));
+
+    //double *A = (double*)__builtin_assume_aligned(a, 16);
+	//double *B = (double*)__builtin_assume_aligned(b, 16);
+    //double *C = (double*)__builtin_assume_aligned(c, 16);
+    double *A = a;
+	double *B = b;
+    double *C = c;
     
+
+
     for(int i=0; i<width; i++){
         for(int j=0; j<width; j++){
             for(int k=0; k<width; k++){
-                asm("nop"); 
-		C[ i*width + j ] += A[ i*width + k ] * B[ k*width + j ] ;
-            	asm("nop");
-	    }
+                asm("nop");
+        C[ i*width + j ] += A[ i*width + k ] * B[ k*width + j ] ;
+                asm("nop");
+
+        }
         }
     }
+
+//    for(int i=0; i<width; i++){
+//        for(int j=0; j<width; j++){
+//            printf("%lf ",C[ i*width + j ]);
+//        }
+//        printf("\n");
+//    }
 
     if(A){ free(A); };
     if(B){ free(B); };

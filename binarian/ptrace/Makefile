@@ -1,15 +1,15 @@
-TARGET := matrix
-OBJS := main.o
+TARGET := stack_view dummy-loop
+OBJS := main.o dummy-loop.o
 LIB_USER := 
 LIB_USER_OBJS :=  
-OPTIONS := -g  
+OPTIONS := -g
 CFLAGS := $(OPTIONS)
 CXXFLAGS := $(OPTIONS)
 CC := gcc
 CXX := g++
 all	: $(TARGET) $(LIB_USER)
 $(TARGET): $(OBJS) $(LIB_USER)
-	@$(CC) -o $@ $(OBJS) $(LIB_USER)
+	@$(CXX) -o $@ $(OBJS) $(LIB_USER)
 	@echo "\033[0;33m Generated	$@\033[0m"
 $(LIB_USER):	$(LIB_USER_OBJS)
 	@ar -rcs $@ $^
