@@ -9,7 +9,7 @@ CC := gcc
 CXX := g++
 all	: $(TARGET) $(LIB_USER)
 $(TARGET): $(OBJS) $(LIB_USER)
-	@$(CC) -o $@ $(OBJS) $(LIB_USER)
+	@$(CXX) -o $@ $(OBJS) $(LIB_USER)
 	@echo "\033[0;33m Generated	$@\033[0m"
 $(LIB_USER):	$(LIB_USER_OBJS)
 	@ar -rcs $@ $^
