@@ -1,16 +1,18 @@
-"""Softmax."""
 
 scores = [3.0, 1.0, 0.2]
 
 import numpy as np
 
 def softmax(x):
-    """Compute softmax values for each sets of scores in x."""
-    sum=0
-    for i in range(0,len(x)-1):
-        print i
-        sum = sum + np.exp(x[i])
-        print("sum of exp(x) %lf.  %s  " % (sum, "Done."))
-        return softmax
+# """Compute softmax values for each sets of scores in x."""
+    return np.exp(x)/sum(np.exp(x)) 
 
 print(softmax(scores))
+
+# Plot softmax curves
+import matplotlib.pyplot as plt
+x = np.arange(-2.0, 6.0, 0.1)
+scores = np.vstack([x, np.ones_like(x), 0.2 * np.ones_like(x)])
+
+plt.plot(x, softmax(scores).T, linewidth=2)
+plt.show()
