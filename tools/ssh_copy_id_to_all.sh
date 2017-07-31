@@ -36,10 +36,13 @@ fi
 num_nodes=$1
 echo "" > hosts.txt 
 for ((i = 2; i <= ${num_nodes}+1; i++)); do
-    ssh-copy-id 172.17.0.$i
+     sshpass -p 'root' ssh-copy-id 172.17.0.$i
 done
 print_info "Copying is done."
-for ((i = 2; i <= ${num_nodes}+1; i++)); do
+
+count=0;
+for ((i = 2; i <= ${num_nodes}+1; i++)); do 
     ssh 172.17.0.$i hostname
 done
+print_info "Testing is done."
 
