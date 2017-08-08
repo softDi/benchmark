@@ -20,9 +20,9 @@ import sys
 import time
 
 # cluster specification
-parameter_servers = ["paslab-cyliu:2222"]
+parameter_servers = ["hpc0:2222"]
 #workers = ["hpc1:2222", "hpc2:2222", "hpc3:2222"]
-workers = ["192.168.1.11:2222"]
+workers = ["hpc1:2222"]
 cluster = tf.train.ClusterSpec({"ps": parameter_servers, "worker": workers})
 
 # input flags
@@ -37,7 +37,7 @@ server = tf.train.Server(
 # config
 batch_size = 100
 learning_rate = 0.0005
-training_epochs = 1
+training_epochs = 10
 logs_path = "/tmp/mnist/1"
 
 # load mnist data set
