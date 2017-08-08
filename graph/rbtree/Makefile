@@ -1,4 +1,4 @@
-TARGET := longest_path
+TARGET := rbtree
 OBJS := main.o
 LIB_USER := 
 LIB_USER_OBJS :=  
