@@ -1,4 +1,4 @@
-TARGET := exercise
+TARGET := gemm
 OBJS := main.o
 LIB_USER := 
 LIB_USER_OBJS :=  
