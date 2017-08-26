@@ -1,11 +1,14 @@
-if [ "$1" == "" ] ; then 
-	echo "Usage: ./start-ps.sh NodeID"
+#!/bin/bash
+if [[ "$1" == "" ]] || [[ "$2" == "" ]] || [[ "$3" == "" ]] || [[ "$4" == "" ]] ; then 
+	echo "Usage: ./start-ps.sh nid model batch_size num_gpus [options]"
 	exit -1
 else 
 	nid=$1
-	python tf_cnn_benchmarks.py --local_parameter_device=cpu --num_gpus=1 \
---batch_size=32 --model=resnet50 --variable_update=distributed_replicated \
+	model=$2
+	batch_size=$3
+	num_gpus=$4
+	python tf_cnn_benchmarks.py --local_parameter_device=cpu --num_gpus=${num_gpus} \
+--batch_size=${batch_size} --model=${model} --variable_update=distributed_replicated \
 --job_name=ps --ps_hosts=192.168.0.100:50000,192.168.0.101:50000 \
---worker_hosts=192.168.0.100:50001,192.168.0.101:50001 --task_index=${nid} \
---data_dir=/mnt/dataset/imagenet
+--worker_hosts=192.168.0.100:50001,192.168.0.101:50001 --task_index=${nid}
 fi 

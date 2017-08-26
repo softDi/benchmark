@@ -27,14 +27,28 @@ print_warning() {
     echo -e "${C_ORANGE} $1 ${C_NONE}"
 }
 
+#tf_cnn ${model} ${batch_size} ${num_gpus} ps $prefix_name $i ${ps_hosts} ${worker_hosts}
 function tf_cnn(){
-	echo "Run tf_cnn on $1"
-	cd ~/benchmark/father/tf_cnn
+	model=$1
+	batch_size=$2
+	num_gpus=$3
+	job_name=$4
+	num_node=$5
+	prefix_name=$5
+	nid=$6
+	ps_hosts=$7
+	worker_hosts=$8
+
+	host_name=$1$2
+	ssh $1$2 echo "Run tf_cnn on ${host_name}" && \
+	cd ~/benchmark/father/tf_cnn && \
 	./node-info.sh hostname
-	#python tf_cnn_benchmarks.py --local_parameter_device=cpu --num_gpus=1 \
-	#--batch_size=32 --model=resnet50 --variable_update=distributed_replicated \
-	#--job_name=ps --ps_hosts=192.168.0.100:50000,192.168.0.101:50000 \
-	#--worker_hosts=192.168.0.100:50001,192.168.0.101:50001 --task_index=${nid} \
+	ps_hosts=hpc0:50000,hpc1:50000 
+	worker_hosts=hpc0:50000,hpc1:50000 
+	python tf_cnn_benchmarks.py --local_parameter_device=cpu --num_gpus=${num_gpus} \
+	--batch_size=${batch_size} --model=resnet50 --variable_update=distributed_replicated \
+	--job_name=${job_name} --ps_hosts=${ps_hosts}\
+	--worker_hosts=${worker_hosts} --task_index=${nid}
 	#--data_dir=/mnt/dataset/imagenet
 }
 
@@ -49,10 +63,27 @@ else
 	num_gpus=$3
 	num_node=$4
 	prefix_name=$5
+	ps_hosts=""
+	worker_hosts=""
 	for (( i=0 ; i<${num_node} ; i++ ))	
 	do
-		tf_cnn $i
+		ps_hosts+="$prefix_name$i:50000," 
+		worker_hosts+="$prefix_name$i:50001," 
 	done
+
+
+	for (( i=0 ; i<${num_node} ; i++ ))	
+	do
+		tf_cnn ${model} ${batch_size} ${num_gpus} ps $prefix_name $i ${ps_hosts} ${worker_hosts}
+	done
+	
+	for (( i=0 ; i<${num_node} ; i++ ))	
+	do
+		tf_cnn ${model} ${batch_size} ${num_gpus} worker $prefix_name $i ${ps_hosts} ${worker_hosts}
+	done
+
+
+	#pssh -PH "$hosts" hostname
 
 	if [[ "$(hostname)" == "${prefix_name}0" ]] ; then 
 		echo "This is Node-$( hostname | sed 's/${prefix_name}//g') "
