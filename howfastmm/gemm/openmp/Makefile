@@ -1,8 +1,8 @@
-TARGET := exercise
+TARGET := run
 OBJS := main.o
 LIB_USER := 
 LIB_USER_OBJS :=  
-OPTIONS := -g -fopenmp 
+OPTIONS := -g -fopenmp
 INC_FLAGS := 
 LINK_FLAGS := -fopenmp
 CFLAGS := $(OPTIONS) $(INC_FLAGS)
