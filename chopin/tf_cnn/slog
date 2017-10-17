@@ -1,0 +1,151 @@
+execve("./cpu-train.sh", ["./cpu-train.sh", "alexnet", "32", "4"], [/* 56 vars */]) = 0
+brk(NULL)                               = 0x25c1000
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f5007327000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+open("/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=115756, ...}) = 0
+mmap(NULL, 115756, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f500730a000
+close(3)                                = 0
+open("/lib64/libtinfo.so.5", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0@\316\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=174576, ...}) = 0
+mmap(NULL, 2268928, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f5006edd000
+mprotect(0x7f5006f02000, 2097152, PROT_NONE) = 0
+mmap(0x7f5007102000, 20480, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x25000) = 0x7f5007102000
+close(3)                                = 0
+open("/lib64/libdl.so.2", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0`\16\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=19776, ...}) = 0
+mmap(NULL, 2109744, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f5006cd9000
+mprotect(0x7f5006cdb000, 2097152, PROT_NONE) = 0
+mmap(0x7f5006edb000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7f5006edb000
+close(3)                                = 0
+open("/lib64/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\20\35\2\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0755, st_size=2127336, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f5007309000
+mmap(NULL, 3940800, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7f5006916000
+mprotect(0x7f5006ace000, 2097152, PROT_NONE) = 0
+mmap(0x7f5006cce000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b8000) = 0x7f5006cce000
+mmap(0x7f5006cd4000, 16832, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7f5006cd4000
+close(3)                                = 0
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f5007307000
+arch_prctl(ARCH_SET_FS, 0x7f5007307740) = 0
+mprotect(0x7f5006cce000, 16384, PROT_READ) = 0
+mprotect(0x7f5006edb000, 4096, PROT_READ) = 0
+mprotect(0x7f5007102000, 16384, PROT_READ) = 0
+mprotect(0x6dc000, 4096, PROT_READ)     = 0
+mprotect(0x7f5007328000, 4096, PROT_READ) = 0
+munmap(0x7f500730a000, 115756)          = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+open("/dev/tty", O_RDWR|O_NONBLOCK)     = 3
+close(3)                                = 0
+brk(NULL)                               = 0x25c1000
+brk(0x25e2000)                          = 0x25e2000
+brk(NULL)                               = 0x25e2000
+open("/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=106070960, ...}) = 0
+mmap(NULL, 106070960, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7f50003ed000
+close(3)                                = 0
+brk(NULL)                               = 0x25e2000
+getuid()                                = 1000
+getgid()                                = 1000
+geteuid()                               = 1000
+getegid()                               = 1000
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+open("/proc/meminfo", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+mmap(NULL, 4096, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7f5007326000
+read(3, "MemTotal:        7972000 kB\nMemF"..., 1024) = 1024
+close(3)                                = 0
+munmap(0x7f5007326000, 4096)            = 0
+rt_sigaction(SIGCHLD, {SIG_DFL, [], SA_RESTORER|SA_RESTART, 0x7f500694b270}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGCHLD, {SIG_DFL, [], SA_RESTORER|SA_RESTART, 0x7f500694b270}, {SIG_DFL, [], SA_RESTORER|SA_RESTART, 0x7f500694b270}, 8) = 0
+rt_sigaction(SIGINT, {SIG_DFL, [], SA_RESTORER, 0x7f500694b270}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGINT, {SIG_DFL, [], SA_RESTORER, 0x7f500694b270}, {SIG_DFL, [], SA_RESTORER, 0x7f500694b270}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], SA_RESTORER, 0x7f500694b270}, {SIG_DFL, [], 0}, 8) = 0
+rt_sigaction(SIGQUIT, {SIG_DFL, [], SA_RESTORER, 0x7f500694b270}, {SIG_DFL, [], SA_RESTORER, 0x7f500694b270}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+rt_sigaction(SIGQUIT, {SIG_IGN, [], SA_RESTORER, 0x7f500694b270}, {SIG_DFL, [], SA_RESTORER, 0x7f500694b270}, 8) = 0
+uname({sysname="Linux", nodename="localhost.localdomain", ...}) = 0
+stat("/home/cyliu/workspace/benchmark/father/tf_cnn", {st_mode=S_IFDIR|0775, st_size=4096, ...}) = 0
+stat(".", {st_mode=S_IFDIR|0775, st_size=4096, ...}) = 0
+getpid()                                = 29893
+open("/usr/lib64/gconv/gconv-modules.cache", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=26254, ...}) = 0
+mmap(NULL, 26254, PROT_READ, MAP_SHARED, 3, 0) = 0x7f5007320000
+close(3)                                = 0
+getppid()                               = 29891
+getpgrp()                               = 29891
+rt_sigaction(SIGCHLD, {0x441310, [], SA_RESTORER|SA_RESTART, 0x7f500694b270}, {SIG_DFL, [], SA_RESTORER|SA_RESTART, 0x7f500694b270}, 8) = 0
+getrlimit(RLIMIT_NPROC, {rlim_cur=4*1024, rlim_max=30952}) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+open("./cpu-train.sh", O_RDONLY)        = 3
+ioctl(3, TCGETS, 0x7ffc6b129250)        = -1 ENOTTY (Inappropriate ioctl for device)
+lseek(3, 0, SEEK_CUR)                   = 0
+read(3, "#!/bin/bash\nif [[ \"$1\" == \"\" ]] "..., 80) = 80
+lseek(3, 0, SEEK_SET)                   = 0
+getrlimit(RLIMIT_NOFILE, {rlim_cur=1024, rlim_max=4*1024}) = 0
+fcntl(255, F_GETFD)                     = -1 EBADF (Bad file descriptor)
+dup2(3, 255)                            = 255
+close(3)                                = 0
+fcntl(255, F_SETFD, FD_CLOEXEC)         = 0
+fcntl(255, F_GETFL)                     = 0x8000 (flags O_RDONLY|O_LARGEFILE)
+fstat(255, {st_mode=S_IFREG|0775, st_size=536, ...}) = 0
+lseek(255, 0, SEEK_CUR)                 = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+read(255, "#!/bin/bash\nif [[ \"$1\" == \"\" ]] "..., 536) = 536
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+stat(".", {st_mode=S_IFDIR|0775, st_size=4096, ...}) = 0
+stat("/opt/intel/advisor_2018.1.0.523188/bin64/python", 0x7ffc6b128cb0) = -1 ENOENT (No such file or directory)
+stat("/opt/mpich/bin/python", 0x7ffc6b128cb0) = -1 ENOENT (No such file or directory)
+stat("/opt/jdk/bin/python", 0x7ffc6b128cb0) = -1 ENOENT (No such file or directory)
+stat("/opt/intel/advisor_2018.1.0.523188/bin64/python", 0x7ffc6b128cb0) = -1 ENOENT (No such file or directory)
+stat("/opt/mpich/bin/python", 0x7ffc6b128cb0) = -1 ENOENT (No such file or directory)
+stat("/opt/jdk/bin/python", 0x7ffc6b128cb0) = -1 ENOENT (No such file or directory)
+stat("/usr/lib64/qt-3.3/bin/python", 0x7ffc6b128cb0) = -1 ENOENT (No such file or directory)
+stat("/usr/local/bin/python", 0x7ffc6b128cb0) = -1 ENOENT (No such file or directory)
+stat("/usr/local/sbin/python", 0x7ffc6b128cb0) = -1 ENOENT (No such file or directory)
+stat("/usr/bin/python", {st_mode=S_IFREG|0755, st_size=7136, ...}) = 0
+stat("/usr/bin/python", {st_mode=S_IFREG|0755, st_size=7136, ...}) = 0
+geteuid()                               = 1000
+getegid()                               = 1000
+getuid()                                = 1000
+getgid()                                = 1000
+access("/usr/bin/python", X_OK)         = 0
+stat("/usr/bin/python", {st_mode=S_IFREG|0755, st_size=7136, ...}) = 0
+geteuid()                               = 1000
+getegid()                               = 1000
+getuid()                                = 1000
+getgid()                                = 1000
+access("/usr/bin/python", R_OK)         = 0
+stat("/usr/bin/python", {st_mode=S_IFREG|0755, st_size=7136, ...}) = 0
+stat("/usr/bin/python", {st_mode=S_IFREG|0755, st_size=7136, ...}) = 0
+geteuid()                               = 1000
+getegid()                               = 1000
+getuid()                                = 1000
+getgid()                                = 1000
+access("/usr/bin/python", X_OK)         = 0
+stat("/usr/bin/python", {st_mode=S_IFREG|0755, st_size=7136, ...}) = 0
+geteuid()                               = 1000
+getegid()                               = 1000
+getuid()                                = 1000
+getgid()                                = 1000
+access("/usr/bin/python", R_OK)         = 0
+rt_sigprocmask(SIG_BLOCK, [INT CHLD], [], 8) = 0
+clone(child_stack=0, flags=CLONE_CHILD_CLEARTID|CLONE_CHILD_SETTID|SIGCHLD, child_tidptr=0x7f5007307a10) = 29894
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+rt_sigprocmask(SIG_BLOCK, [CHLD], [], 8) = 0
+rt_sigaction(SIGINT, {0x43e780, [], SA_RESTORER, 0x7f500694b270}, {SIG_DFL, [], SA_RESTORER, 0x7f500694b270}, 8) = 0
+wait4(-1, [{WIFEXITED(s) && WEXITSTATUS(s) == 0}], 0, NULL) = 29894
+rt_sigprocmask(SIG_SETMASK, [], NULL, 8) = 0
+--- SIGCHLD {si_signo=SIGCHLD, si_code=CLD_EXITED, si_pid=29894, si_uid=1000, si_status=0, si_utime=17659, si_stime=1364} ---
+wait4(-1, 0x7ffc6b1287d0, WNOHANG, NULL) = -1 ECHILD (No child processes)
+rt_sigreturn({mask=[]})                 = 0
+rt_sigaction(SIGINT, {SIG_DFL, [], SA_RESTORER, 0x7f500694b270}, {0x43e780, [], SA_RESTORER, 0x7f500694b270}, 8) = 0
+rt_sigprocmask(SIG_BLOCK, NULL, [], 8)  = 0
+read(255, "", 536)                      = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
