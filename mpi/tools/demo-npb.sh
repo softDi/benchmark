@@ -38,7 +38,7 @@ CLASS=$2
 NUM_PROCESSES=$3  
 ~/benchmark/tools/ssh_copy_id_to_all.sh ${NUM_PROCESSES}
 ~/benchmark/tools/genhosts.sh ${NUM_PROCESSES}
-pssh -h hosts.txt "make -C ~/benchmark/mpi/NPB3.3-MPI ${NAME} ${CLASS} ${NUM_PROCESSES}"
+parallel-ssh -h hosts.txt "make -C ~/benchmark/mpi/NPB3.3-MPI ${NAME} CLASS=${CLASS} NPROCS=${NUM_PROCESSES}"
 if [[ ! -f benchmark/mpi/NPB3.3-MPI/bin/${NAME}.${CLASS}.${NUM_PROCESSES} ]]
 then
 	print_error "Cannot find ${NAME}.${CLASS}.${NUM_PROCESSES}"
